@@ -5,7 +5,7 @@ Speech APIs enable you to recognize speech and convert it to text using advanced
 This C# SDK is for the [Cloudmersive Voice Recognition API](https://cloudmersive.com/voice-recognition-and-speech-api):
 
 - API version: v1
-- SDK version: 2.0.1
+- SDK version: 2.0.2
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>

@@ -1,7 +1,7 @@
 ﻿{
 
   "packageName" : "Cloudmersive.APIClient.NETCore.Speech",
-  "packageVersion": "2.0.1",
+  "packageVersion": "2.0.2",
   "netCoreProjectFile": "true",
   "packageGuid": "9b454447-27bb-4f24-938d-63d85c0693e6",
   "targetFramework": "v5.0"
