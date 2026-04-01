@@ -25,95 +25,49 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Perform text-to-speech on a string
+        /// Generate audio from text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>Object</returns>
-        Object SpeakPost (string format, string text);
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>byte[]</returns>
+        byte[] SpeechSpeakTextVoiceBasicAudioPost (TextToSpeechRequest body = null);
 
         /// <summary>
-        /// Perform text-to-speech on a string
+        /// Generate audio from text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> SpeakPostWithHttpInfo (string format, string text);
-        /// <summary>
-        /// Perform text-to-speech on a string
-        /// </summary>
-        /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </remarks>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>Object</returns>
-        Object SpeakTextToSpeech (TextToSpeechRequest reqConfig);
-
-        /// <summary>
-        /// Perform text-to-speech on a string
-        /// </summary>
-        /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </remarks>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> SpeakTextToSpeechWithHttpInfo (TextToSpeechRequest reqConfig);
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> SpeechSpeakTextVoiceBasicAudioPostWithHttpInfo (TextToSpeechRequest body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Perform text-to-speech on a string
+        /// Generate audio from text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SpeakPostAsync (string format, string text);
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> SpeechSpeakTextVoiceBasicAudioPostAsync (TextToSpeechRequest body = null);
 
         /// <summary>
-        /// Perform text-to-speech on a string
+        /// Generate audio from text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SpeakPostAsyncWithHttpInfo (string format, string text);
-        /// <summary>
-        /// Perform text-to-speech on a string
-        /// </summary>
-        /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </remarks>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SpeakTextToSpeechAsync (TextToSpeechRequest reqConfig);
-
-        /// <summary>
-        /// Perform text-to-speech on a string
-        /// </summary>
-        /// <remarks>
-        /// Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </remarks>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SpeakTextToSpeechAsyncWithHttpInfo (TextToSpeechRequest reqConfig);
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> SpeechSpeakTextVoiceBasicAudioPostAsyncWithHttpInfo (TextToSpeechRequest body = null);
         #endregion Asynchronous Operations
     }
 
@@ -215,35 +169,27 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
         }
 
         /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Generate audio from text using Advanced AI Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>Object</returns>
-        public Object SpeakPost (string format, string text)
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>byte[]</returns>
+        public byte[] SpeechSpeakTextVoiceBasicAudioPost (TextToSpeechRequest body = null)
         {
-             ApiResponse<Object> localVarResponse = SpeakPostWithHttpInfo(format, text);
+             ApiResponse<byte[]> localVarResponse = SpeechSpeakTextVoiceBasicAudioPostWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Generate audio from text using Advanced AI Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > SpeakPostWithHttpInfo (string format, string text)
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > SpeechSpeakTextVoiceBasicAudioPostWithHttpInfo (TextToSpeechRequest body = null)
         {
-            // verify the required parameter 'format' is set
-            if (format == null)
-                throw new ApiException(400, "Missing required parameter 'format' when calling SpeakApi->SpeakPost");
-            // verify the required parameter 'text' is set
-            if (text == null)
-                throw new ApiException(400, "Missing required parameter 'text' when calling SpeakApi->SpeakPost");
 
-            var localVarPath = "./speech/speak/text/basicVoice/{format}";
+            var localVarPath = "./speech/speak/text/voice/basic/audio";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -255,9 +201,7 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
             String[] localVarHttpContentTypes = new String[] {
                 "application/json", 
                 "text/json", 
-                "application/xml", 
-                "text/xml", 
-                "application/x-www-form-urlencoded"
+                "application/_*+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -269,14 +213,13 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (format != null) localVarPathParams.Add("format", this.Configuration.ApiClient.ParameterToString(format)); // path parameter
-            if (text != null && text.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(text); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = text; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (Apikey) required
@@ -294,46 +237,38 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("SpeakPost", localVarResponse);
+                Exception exception = ExceptionFactory("SpeechSpeakTextVoiceBasicAudioPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Generate audio from text using Advanced AI Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SpeakPostAsync (string format, string text)
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> SpeechSpeakTextVoiceBasicAudioPostAsync (TextToSpeechRequest body = null)
         {
-             ApiResponse<Object> localVarResponse = await SpeakPostAsyncWithHttpInfo(format, text);
+             ApiResponse<byte[]> localVarResponse = await SpeechSpeakTextVoiceBasicAudioPostAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
+        /// Generate audio from text using Advanced AI Converts text to speech using advanced AI. Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese. Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female). Output format is controlled by the Format field (mp3 or wav, default: mp3). Consumes 1 API call per second of generated audio.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">File format to generate response in; possible values are \&quot;mp3\&quot; or \&quot;wav\&quot;</param>
-        /// <param name="text">The text you would like to conver to speech.  Be sure to surround with quotes, e.g. \&quot;The quick brown fox jumps over the lazy dog.\&quot;</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SpeakPostAsyncWithHttpInfo (string format, string text)
+        /// <param name="body">String input request (optional)</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> SpeechSpeakTextVoiceBasicAudioPostAsyncWithHttpInfo (TextToSpeechRequest body = null)
         {
-            // verify the required parameter 'format' is set
-            if (format == null)
-                throw new ApiException(400, "Missing required parameter 'format' when calling SpeakApi->SpeakPost");
-            // verify the required parameter 'text' is set
-            if (text == null)
-                throw new ApiException(400, "Missing required parameter 'text' when calling SpeakApi->SpeakPost");
 
-            var localVarPath = "./speech/speak/text/basicVoice/{format}";
+            var localVarPath = "./speech/speak/text/voice/basic/audio";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -345,9 +280,7 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
             String[] localVarHttpContentTypes = new String[] {
                 "application/json", 
                 "text/json", 
-                "application/xml", 
-                "text/xml", 
-                "application/x-www-form-urlencoded"
+                "application/_*+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -359,14 +292,13 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (format != null) localVarPathParams.Add("format", this.Configuration.ApiClient.ParameterToString(format)); // path parameter
-            if (text != null && text.GetType() != typeof(byte[]))
+            if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(text); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = text; // byte array
+                localVarPostBody = body; // byte array
             }
 
             // authentication (Apikey) required
@@ -384,186 +316,13 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("SpeakPost", localVarResponse);
+                Exception exception = ExceptionFactory("SpeechSpeakTextVoiceBasicAudioPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-        }
-
-        /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </summary>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>Object</returns>
-        public Object SpeakTextToSpeech (TextToSpeechRequest reqConfig)
-        {
-             ApiResponse<Object> localVarResponse = SpeakTextToSpeechWithHttpInfo(reqConfig);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </summary>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > SpeakTextToSpeechWithHttpInfo (TextToSpeechRequest reqConfig)
-        {
-            // verify the required parameter 'reqConfig' is set
-            if (reqConfig == null)
-                throw new ApiException(400, "Missing required parameter 'reqConfig' when calling SpeakApi->SpeakTextToSpeech");
-
-            var localVarPath = "./speech/speak/text/voice/basic/audio";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/xml", 
-                "text/xml", 
-                "application/x-www-form-urlencoded"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (reqConfig != null && reqConfig.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(reqConfig); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = reqConfig; // byte array
-            }
-
-            // authentication (Apikey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
-            {
-                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("SpeakTextToSpeech", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-        }
-
-        /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </summary>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SpeakTextToSpeechAsync (TextToSpeechRequest reqConfig)
-        {
-             ApiResponse<Object> localVarResponse = await SpeakTextToSpeechAsyncWithHttpInfo(reqConfig);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Perform text-to-speech on a string Takes as input a string and a file format (mp3 or wav) and outputs a wave form in the appropriate format.
-        /// </summary>
-        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="reqConfig">String input request</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SpeakTextToSpeechAsyncWithHttpInfo (TextToSpeechRequest reqConfig)
-        {
-            // verify the required parameter 'reqConfig' is set
-            if (reqConfig == null)
-                throw new ApiException(400, "Missing required parameter 'reqConfig' when calling SpeakApi->SpeakTextToSpeech");
-
-            var localVarPath = "./speech/speak/text/voice/basic/audio";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/xml", 
-                "text/xml", 
-                "application/x-www-form-urlencoded"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (reqConfig != null && reqConfig.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(reqConfig); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = reqConfig; // byte array
-            }
-
-            // authentication (Apikey) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
-            {
-                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("SpeakTextToSpeech", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
     }

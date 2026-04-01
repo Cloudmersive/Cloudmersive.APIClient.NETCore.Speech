@@ -25,49 +25,57 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Recognize audio input as text using machine learning
+        /// Recognize audio input as text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>SpeechRecognitionResult</returns>
-        SpeechRecognitionResult RecognizeFile (System.IO.Stream speechFile);
+        SpeechRecognitionResult SpeechRecognizeFilePost (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
 
         /// <summary>
-        /// Recognize audio input as text using machine learning
+        /// Recognize audio input as text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>ApiResponse of SpeechRecognitionResult</returns>
-        ApiResponse<SpeechRecognitionResult> RecognizeFileWithHttpInfo (System.IO.Stream speechFile);
+        ApiResponse<SpeechRecognitionResult> SpeechRecognizeFilePostWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Recognize audio input as text using machine learning
+        /// Recognize audio input as text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>Task of SpeechRecognitionResult</returns>
-        System.Threading.Tasks.Task<SpeechRecognitionResult> RecognizeFileAsync (System.IO.Stream speechFile);
+        System.Threading.Tasks.Task<SpeechRecognitionResult> SpeechRecognizeFilePostAsync (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
 
         /// <summary>
-        /// Recognize audio input as text using machine learning
+        /// Recognize audio input as text using Advanced AI
         /// </summary>
         /// <remarks>
-        /// Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>Task of ApiResponse (SpeechRecognitionResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SpeechRecognitionResult>> RecognizeFileAsyncWithHttpInfo (System.IO.Stream speechFile);
+        System.Threading.Tasks.Task<ApiResponse<SpeechRecognitionResult>> SpeechRecognizeFilePostAsyncWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
         #endregion Asynchronous Operations
     }
 
@@ -169,28 +177,29 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
         }
 
         /// <summary>
-        /// Recognize audio input as text using machine learning Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Recognize audio input as text using Advanced AI Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>SpeechRecognitionResult</returns>
-        public SpeechRecognitionResult RecognizeFile (System.IO.Stream speechFile)
+        public SpeechRecognitionResult SpeechRecognizeFilePost (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
         {
-             ApiResponse<SpeechRecognitionResult> localVarResponse = RecognizeFileWithHttpInfo(speechFile);
+             ApiResponse<SpeechRecognitionResult> localVarResponse = SpeechRecognizeFilePostWithHttpInfo(languageCode, recognitionMode, speechFile);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Recognize audio input as text using machine learning Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Recognize audio input as text using Advanced AI Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>ApiResponse of SpeechRecognitionResult</returns>
-        public ApiResponse< SpeechRecognitionResult > RecognizeFileWithHttpInfo (System.IO.Stream speechFile)
+        public ApiResponse< SpeechRecognitionResult > SpeechRecognizeFilePostWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
         {
-            // verify the required parameter 'speechFile' is set
-            if (speechFile == null)
-                throw new ApiException(400, "Missing required parameter 'speechFile' when calling RecognizeApi->RecognizeFile");
 
             var localVarPath = "./speech/recognize/file";
             var localVarPathParams = new Dictionary<String, String>();
@@ -208,15 +217,16 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
                 "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (languageCode != null) localVarHeaderParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode)); // header parameter
+            if (recognitionMode != null) localVarHeaderParams.Add("recognitionMode", this.Configuration.ApiClient.ParameterToString(recognitionMode)); // header parameter
             if (speechFile != null) localVarFileParams.Add("speechFile", this.Configuration.ApiClient.ParameterToFile("speechFile", speechFile));
 
             // authentication (Apikey) required
@@ -234,7 +244,7 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("RecognizeFile", localVarResponse);
+                Exception exception = ExceptionFactory("SpeechRecognizeFilePost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -244,29 +254,30 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
         }
 
         /// <summary>
-        /// Recognize audio input as text using machine learning Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Recognize audio input as text using Advanced AI Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>Task of SpeechRecognitionResult</returns>
-        public async System.Threading.Tasks.Task<SpeechRecognitionResult> RecognizeFileAsync (System.IO.Stream speechFile)
+        public async System.Threading.Tasks.Task<SpeechRecognitionResult> SpeechRecognizeFilePostAsync (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
         {
-             ApiResponse<SpeechRecognitionResult> localVarResponse = await RecognizeFileAsyncWithHttpInfo(speechFile);
+             ApiResponse<SpeechRecognitionResult> localVarResponse = await SpeechRecognizeFilePostAsyncWithHttpInfo(languageCode, recognitionMode, speechFile);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Recognize audio input as text using machine learning Uses advanced machine learning to convert input audio, which can be mp3 or wav, into text.
+        /// Recognize audio input as text using Advanced AI Uses advanced AI to convert input audio to text. Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats. Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="speechFile">Speech file to perform the operation on.  Common file formats such as WAV, MP3 are supported.</param>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
         /// <returns>Task of ApiResponse (SpeechRecognitionResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SpeechRecognitionResult>> RecognizeFileAsyncWithHttpInfo (System.IO.Stream speechFile)
+        public async System.Threading.Tasks.Task<ApiResponse<SpeechRecognitionResult>> SpeechRecognizeFilePostAsyncWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
         {
-            // verify the required parameter 'speechFile' is set
-            if (speechFile == null)
-                throw new ApiException(400, "Missing required parameter 'speechFile' when calling RecognizeApi->RecognizeFile");
 
             var localVarPath = "./speech/recognize/file";
             var localVarPathParams = new Dictionary<String, String>();
@@ -284,15 +295,16 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
                 "application/json",
-                "text/json",
-                "application/xml",
-                "text/xml"
+                "text/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (languageCode != null) localVarHeaderParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode)); // header parameter
+            if (recognitionMode != null) localVarHeaderParams.Add("recognitionMode", this.Configuration.ApiClient.ParameterToString(recognitionMode)); // header parameter
             if (speechFile != null) localVarFileParams.Add("speechFile", this.Configuration.ApiClient.ParameterToFile("speechFile", speechFile));
 
             // authentication (Apikey) required
@@ -310,7 +322,7 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("RecognizeFile", localVarResponse);
+                Exception exception = ExceptionFactory("SpeechRecognizeFilePost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
