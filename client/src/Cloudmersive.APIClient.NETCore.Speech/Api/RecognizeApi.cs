@@ -25,6 +25,31 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps
+        /// </summary>
+        /// <remarks>
+        /// Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>SpeechRecognitionResultAdvanced</returns>
+        SpeechRecognitionResultAdvanced SpeechRecognizeFileAdvancedPost (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
+
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps
+        /// </summary>
+        /// <remarks>
+        /// Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>ApiResponse of SpeechRecognitionResultAdvanced</returns>
+        ApiResponse<SpeechRecognitionResultAdvanced> SpeechRecognizeFileAdvancedPostWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
+        /// <summary>
         /// Recognize audio input as text using Advanced AI
         /// </summary>
         /// <remarks>
@@ -51,6 +76,31 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
         ApiResponse<SpeechRecognitionResult> SpeechRecognizeFilePostWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps
+        /// </summary>
+        /// <remarks>
+        /// Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>Task of SpeechRecognitionResultAdvanced</returns>
+        System.Threading.Tasks.Task<SpeechRecognitionResultAdvanced> SpeechRecognizeFileAdvancedPostAsync (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
+
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps
+        /// </summary>
+        /// <remarks>
+        /// Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>Task of ApiResponse (SpeechRecognitionResultAdvanced)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SpeechRecognitionResultAdvanced>> SpeechRecognizeFileAdvancedPostAsyncWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null);
         /// <summary>
         /// Recognize audio input as text using Advanced AI
         /// </summary>
@@ -174,6 +224,161 @@ namespace Cloudmersive.APIClient.NETCore.Speech.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>SpeechRecognitionResultAdvanced</returns>
+        public SpeechRecognitionResultAdvanced SpeechRecognizeFileAdvancedPost (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
+        {
+             ApiResponse<SpeechRecognitionResultAdvanced> localVarResponse = SpeechRecognizeFileAdvancedPostWithHttpInfo(languageCode, recognitionMode, speechFile);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>ApiResponse of SpeechRecognitionResultAdvanced</returns>
+        public ApiResponse< SpeechRecognitionResultAdvanced > SpeechRecognizeFileAdvancedPostWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
+        {
+
+            var localVarPath = "./speech/recognize/file/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (languageCode != null) localVarHeaderParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode)); // header parameter
+            if (recognitionMode != null) localVarHeaderParams.Add("recognitionMode", this.Configuration.ApiClient.ParameterToString(recognitionMode)); // header parameter
+            if (speechFile != null) localVarFileParams.Add("speechFile", this.Configuration.ApiClient.ParameterToFile("speechFile", speechFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SpeechRecognizeFileAdvancedPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpeechRecognitionResultAdvanced>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (SpeechRecognitionResultAdvanced) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechRecognitionResultAdvanced)));
+        }
+
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>Task of SpeechRecognitionResultAdvanced</returns>
+        public async System.Threading.Tasks.Task<SpeechRecognitionResultAdvanced> SpeechRecognizeFileAdvancedPostAsync (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
+        {
+             ApiResponse<SpeechRecognitionResultAdvanced> localVarResponse = await SpeechRecognizeFileAdvancedPostAsyncWithHttpInfo(languageCode, recognitionMode, speechFile);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps Higher-accuracy variant of /speech/recognize/file. Uses advanced  alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.Speech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="languageCode">ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect. (optional)</param>
+        /// <param name="recognitionMode">Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments. (optional, default to Normal)</param>
+        /// <param name="speechFile"> (optional)</param>
+        /// <returns>Task of ApiResponse (SpeechRecognitionResultAdvanced)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SpeechRecognitionResultAdvanced>> SpeechRecognizeFileAdvancedPostAsyncWithHttpInfo (string languageCode = null, string recognitionMode = null, System.IO.Stream speechFile = null)
+        {
+
+            var localVarPath = "./speech/recognize/file/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (languageCode != null) localVarHeaderParams.Add("languageCode", this.Configuration.ApiClient.ParameterToString(languageCode)); // header parameter
+            if (recognitionMode != null) localVarHeaderParams.Add("recognitionMode", this.Configuration.ApiClient.ParameterToString(recognitionMode)); // header parameter
+            if (speechFile != null) localVarFileParams.Add("speechFile", this.Configuration.ApiClient.ParameterToFile("speechFile", speechFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SpeechRecognizeFileAdvancedPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpeechRecognitionResultAdvanced>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (SpeechRecognitionResultAdvanced) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpeechRecognitionResultAdvanced)));
         }
 
         /// <summary>

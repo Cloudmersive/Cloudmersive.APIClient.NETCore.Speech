@@ -1,6 +1,6 @@
 # Cloudmersive.APIClient.NETCore.Speech.Api.SpeakApi
 
-All URIs are relative to *https://testapi.cloudmersive.com*
+All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

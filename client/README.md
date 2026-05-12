@@ -5,7 +5,7 @@ Speech APIs enable you to recognize speech and convert it to text using advanced
 This C# SDK is for the [Cloudmersive Voice Recognition API](https://cloudmersive.com/voice-recognition-and-speech-api):
 
 - API version: v1
-- SDK version: 2.1.1
+- SDK version: 2.1.2
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -60,13 +60,13 @@ namespace Example
 
             try
             {
-                // Recognize audio input as text using Advanced AI
-                SpeechRecognitionResult result = apiInstance.SpeechRecognizeFilePost(languageCode, recognitionMode, speechFile);
+                // Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps
+                SpeechRecognitionResultAdvanced result = apiInstance.SpeechRecognizeFileAdvancedPost(languageCode, recognitionMode, speechFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling RecognizeApi.SpeechRecognizeFilePost: " + e.Message );
+                Debug.Print("Exception when calling RecognizeApi.SpeechRecognizeFileAdvancedPost: " + e.Message );
             }
 
         }
@@ -77,20 +77,29 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://testapi.cloudmersive.com*
+All URIs are relative to *https://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*RecognizeApi* | [**SpeechRecognizeFileAdvancedPost**](docs/RecognizeApi.md#speechrecognizefileadvancedpost) | **POST** /speech/recognize/file/advanced | Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps
 *RecognizeApi* | [**SpeechRecognizeFilePost**](docs/RecognizeApi.md#speechrecognizefilepost) | **POST** /speech/recognize/file | Recognize audio input as text using Advanced AI
 *SpeakApi* | [**SpeechSpeakTextVoiceBasicAudioPost**](docs/SpeakApi.md#speechspeaktextvoicebasicaudiopost) | **POST** /speech/speak/text/voice/basic/audio | Generate audio from text using Advanced AI
+*TasksBatchJobApi* | [**SpeechBatchJobRecognizeFileAdvancedPost**](docs/TasksBatchJobApi.md#speechbatchjobrecognizefileadvancedpost) | **POST** /speech/batch-job/recognize/file/advanced | Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps as a Batch Job
+*TasksBatchJobApi* | [**SpeechBatchJobRecognizeFilePost**](docs/TasksBatchJobApi.md#speechbatchjobrecognizefilepost) | **POST** /speech/batch-job/recognize/file | Recognize audio input as text using Advanced AI as a Batch Job
+*TasksBatchJobApi* | [**SpeechBatchJobSpeakTextVoiceBasicAudioPost**](docs/TasksBatchJobApi.md#speechbatchjobspeaktextvoicebasicaudiopost) | **POST** /speech/batch-job/speak/text/voice/basic/audio | Generate audio from text using Advanced AI as a Batch Job
+*TasksBatchJobApi* | [**SpeechBatchJobStatusGet**](docs/TasksBatchJobApi.md#speechbatchjobstatusget) | **GET** /speech/batch-job/status | Get the status and result of a Speech Batch Job
 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [Model.SpeechBatchJobResult](docs/SpeechBatchJobResult.md)
+ - [Model.SpeechBatchJobStatusResult](docs/SpeechBatchJobStatusResult.md)
  - [Model.SpeechRecognitionResult](docs/SpeechRecognitionResult.md)
+ - [Model.SpeechRecognitionResultAdvanced](docs/SpeechRecognitionResultAdvanced.md)
  - [Model.TextToSpeechRequest](docs/TextToSpeechRequest.md)
  - [Model.TokenTimestamp](docs/TokenTimestamp.md)
+ - [Model.WordTimestamp](docs/WordTimestamp.md)
 
 
 <a name="documentation-for-authorization"></a>

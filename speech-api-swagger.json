@@ -52,6 +52,52 @@
         }
       }
     },
+    "/speech/recognize/file/advanced": {
+      "post": {
+        "tags": [
+          "Recognize"
+        ],
+        "summary": "Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps",
+        "description": "Higher-accuracy variant of /speech/recognize/file. Uses advanced\r\nalignment for token timestamps.\r\nSupports WAV, MP3, M4A, FLAC, OGG, and WMA formats.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "languageCode",
+            "description": "ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect.",
+            "type": "string",
+            "default": ""
+          },
+          {
+            "in": "header",
+            "name": "recognitionMode",
+            "description": "Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments.",
+            "type": "string",
+            "default": "Normal"
+          },
+          {
+            "in": "formData",
+            "name": "speechFile",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SpeechRecognitionResultAdvanced"
+            }
+          }
+        }
+      }
+    },
     "/speech/speak/text/voice/basic/audio": {
       "post": {
         "tags": [
@@ -87,9 +133,221 @@
           }
         }
       }
+    },
+    "/speech/batch-job/recognize/file": {
+      "post": {
+        "tags": [
+          "TasksBatchJob"
+        ],
+        "summary": "Recognize audio input as text using Advanced AI as a Batch Job",
+        "description": "Creates an async batch job for transcribing a long audio file.  Use the GetAsyncJobStatus API to check on the status of the job and retrieve the result when complete.  Uses advanced AI to convert input audio to text.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.  Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.  Requires Managed Instance or Private Cloud deployment.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "languageCode",
+            "description": "ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect.",
+            "type": "string",
+            "default": ""
+          },
+          {
+            "in": "header",
+            "name": "recognitionMode",
+            "description": "Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments.",
+            "type": "string",
+            "default": "Normal"
+          },
+          {
+            "in": "formData",
+            "name": "speechFile",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SpeechBatchJobResult"
+            }
+          }
+        }
+      }
+    },
+    "/speech/batch-job/recognize/file/advanced": {
+      "post": {
+        "tags": [
+          "TasksBatchJob"
+        ],
+        "summary": "Recognize audio input as text using Advanced AI with high-accuracy word-level timestamps as a Batch Job",
+        "description": "Creates an async batch job for transcribing a long audio file with high-accuracy word-level timestamps.  Use the GetAsyncJobStatus API to check on the status of the job and retrieve the result when complete.  Higher-accuracy variant of /speech/batch-job/recognize/file. Uses advanced alignment for token timestamps.  Supports WAV, MP3, M4A, FLAC, OGG, and WMA formats.  Consumes 1 API call per second of audio in Fast mode, 5 API calls per second in Normal mode, and 10 API calls per second in Advanced mode.  Requires Managed Instance or Private Cloud deployment.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "languageCode",
+            "description": "ISO 639-3 three-letter language code (e.g. eng, spa, fra). Empty for auto-detect.",
+            "type": "string",
+            "default": ""
+          },
+          {
+            "in": "header",
+            "name": "recognitionMode",
+            "description": "Recognition mode: Fast, Normal (default), or Advanced. Advanced is only available on Private Cloud and Managed Instance deployments.",
+            "type": "string",
+            "default": "Normal"
+          },
+          {
+            "in": "formData",
+            "name": "speechFile",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SpeechBatchJobResult"
+            }
+          }
+        }
+      }
+    },
+    "/speech/batch-job/speak/text/voice/basic/audio": {
+      "post": {
+        "tags": [
+          "TasksBatchJob"
+        ],
+        "summary": "Generate audio from text using Advanced AI as a Batch Job",
+        "description": "Creates an async batch job for converting long-form text to speech.  Use the GetAsyncJobStatus API to check on the status of the job and retrieve the generated audio when complete.  Converts text to speech using advanced AI.  Supports English, Spanish, French, Hindi, Italian, Japanese, Portuguese, and Chinese.  Specify language with LanguageCode (ISO 639-3, default: eng) and gender with Gender (Male or Female, default: Female).  Output format is controlled by the Format field (mp3 or wav, default: mp3).  Consumes 1 API call per second of generated audio.  Requires Managed Instance or Private Cloud deployment.",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "String input request",
+            "schema": {
+              "$ref": "#/definitions/TextToSpeechRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SpeechBatchJobResult"
+            }
+          }
+        }
+      }
+    },
+    "/speech/batch-job/status": {
+      "get": {
+        "tags": [
+          "TasksBatchJob"
+        ],
+        "summary": "Get the status and result of a Speech Batch Job",
+        "description": "Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  When COMPLETED, the corresponding result field (Recognize transcription, or generated Text-to-Speech audio) is populated on the response.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "AsyncJobID",
+            "description": "Job ID for the batch job to get the status of",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SpeechBatchJobStatusResult"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
+    "SpeechBatchJobResult": {
+      "description": "Result of submitting a Speech batch job",
+      "type": "object",
+      "properties": {
+        "Successful": {
+          "description": "True if successful, false otherwise",
+          "type": "boolean"
+        },
+        "AsyncJobID": {
+          "description": "When creating a job, an Async Job ID is returned.  Use the GetAsyncJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SpeechBatchJobStatusResult": {
+      "description": "Result of performing a Speech batch job operation",
+      "type": "object",
+      "properties": {
+        "Successful": {
+          "description": "True if the operation to check the status of the job was successful, false otherwise",
+          "type": "boolean"
+        },
+        "AsyncJobStatus": {
+          "description": "Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED",
+          "type": "string"
+        },
+        "AsyncJobID": {
+          "description": "Job ID",
+          "type": "string"
+        },
+        "RecognizeResult": {
+          "$ref": "#/definitions/SpeechRecognitionResult"
+        },
+        "RecognizeAdvancedResult": {
+          "$ref": "#/definitions/SpeechRecognitionResultAdvanced"
+        },
+        "SpeakAudioResultFileContent": {
+          "format": "byte",
+          "description": "Generated audio file produced by a completed Text-to-Speech batch job, in the requested format (mp3 or wav)",
+          "type": "string"
+        },
+        "SpeakAudioContentType": {
+          "description": "MIME type of SpeakAudioResultFileContent (audio/mpeg or audio/wav)",
+          "type": "string"
+        },
+        "ErrorMessage": {
+          "description": "Error message (if any)",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "SpeechRecognitionResult": {
       "description": "Result of recognizing speech",
       "type": "object",
@@ -104,6 +362,25 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/TokenTimestamp"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "SpeechRecognitionResultAdvanced": {
+      "description": "Result of recognizing speech with the higher-accuracy file/advanced endpoint.\r\nWord-oriented (one entry per word, not per BPE sub-token) and produced\r\nfrom DTW-aligned timestamps.",
+      "type": "object",
+      "properties": {
+        "TextResult": {
+          "description": "Recognition result in text format",
+          "type": "string",
+          "example": "Hello world, this is a test."
+        },
+        "Words": {
+          "description": "Word-level timestamps with character offsets into TextResult.\r\nTimestamps are derived via Dynamic Time Warping (DTW) alignment for\r\nsubstantially better accuracy than the default token-timestamp path.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WordTimestamp"
           }
         }
       },
@@ -171,6 +448,42 @@
         }
       },
       "additionalProperties": false
+    },
+    "WordTimestamp": {
+      "description": "A single word with its DTW-aligned time range and position in the output text.",
+      "type": "object",
+      "properties": {
+        "Word": {
+          "description": "The word text",
+          "type": "string",
+          "example": " Hello"
+        },
+        "CharacterOffsetStart": {
+          "format": "int32",
+          "description": "Start character offset (0-based) in TextResult",
+          "type": "integer",
+          "example": 0
+        },
+        "CharacterOffsetEnd": {
+          "format": "int32",
+          "description": "End character offset (exclusive) in TextResult",
+          "type": "integer",
+          "example": 6
+        },
+        "StartTimeMs": {
+          "format": "int64",
+          "description": "Start time of this word in the audio, in milliseconds",
+          "type": "integer",
+          "example": 0
+        },
+        "EndTimeMs": {
+          "format": "int64",
+          "description": "End time of this word in the audio, in milliseconds",
+          "type": "integer",
+          "example": 500
+        }
+      },
+      "additionalProperties": false
     }
   },
   "securityDefinitions": {
@@ -183,8 +496,7 @@
   },
   "security": [
     {
-      "Apikey": []
+      "Apikey": [ ]
     }
-  ],
-  "host": "testapi.cloudmersive.com"
+  ]
 }

@@ -1,6 +1,6 @@
 ﻿Remove-Item –path ./client –recurse
 
-Invoke-WebRequest -Uri 'https://api-console.cloudmersive.com/swagger/api/spec/speech' -OutFile '.\speech-api-swagger.json'
+Invoke-WebRequest -Uri 'https://api.cloudmersive.com/speech/v1/swagger.json' -OutFile '.\speech-api-swagger.json'
 (Get-Content .\speech-api-swagger.json).replace('localhost', "api.cloudmersive.com") | Set-Content .\speech-api-swagger.json
 (Get-Content .\speech-api-swagger.json).replace('"http"', '"https"') | Set-Content .\speech-api-swagger.json
 
